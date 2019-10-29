@@ -1,11 +1,13 @@
 import pytest
 import pytest_check as ck
+import logging
 
 
 @pytest.mark.p1
 @pytest.mark.api
 def test_add_fuel_card_normal(api, db, case_data):
     """正常添加加油卡"""
+    logging.info('正常添加用例')
     url = '/gasStation/process'
     data_source_id = case_data.get('data_source_id')
     card_number = case_data.get('card_number')

@@ -12,10 +12,12 @@ load_dotenv()  # 将项目下的.env文件中变量添加到环境变量中
 
 # Hooks方法
 def pytest_configure(config):
-    """更改生成报告的路径"""
+    """更改生成报告和日志的路径"""
     htmlpath = config.getoption('htmlpath')
-    now = datetime.now().strftime('%Y%m%d_%H%M%S')
-    config.option.htmlpath = os.path.join(config.rootdir, 'reports', htmlpath.format(now))
+    log_file = config.getoption('log_file') or config.getini('log_file') or '{}.log'
+    now = datetime.now()
+    config.option.htmlpath = os.path.join(config.rootdir, 'reports', htmlpath.format(now.strftime('%Y%m%d_%H%M%S')))
+    config.option.log_file = os.path.join(config.rootdir, 'logs', log_file.format(now.strftime('%Y%m%d')))
 
 
 def pytest_addoption(parser):

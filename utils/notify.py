@@ -4,6 +4,7 @@ import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
+import logging
 
 
 def parse_smtp_uri(conf_uri):
@@ -73,10 +74,6 @@ class Email(object):
         self.smtp_login()
         for person in receivers:
             if person:
-                print(f'发送邮件给: {person}')
+                logging.debug(f'发送邮件给: {person}')
                 self.smtp.sendmail(self.smtp_conf.get('user'), person, self.msg.as_string())
-        print('邮件发送成功')
-
-
-if __name__ == '__main__':
-    Email().send('主题', ['superhin@126.com'], '正文', '/Users/apple/Documents/Projects/longteng17/reports/report.html')
+        logging.info('邮件发送成功')
