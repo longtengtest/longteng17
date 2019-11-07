@@ -7,6 +7,7 @@ import re
 import pymysql
 import logging
 
+
 def parse_db_uri(db_uri):
     """从db_uri中解析出数据host,port,db,user,password等信息，返回字典格式的数据库配置"""
     try:

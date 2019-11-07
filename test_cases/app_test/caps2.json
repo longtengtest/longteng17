@@ -1,0 +1,13 @@
+{
+  "caps": {
+    "platformName": "Android",
+    "platformVersion": "5.1.1",
+    "deviceName": "127.0.0.1:21503",
+    "appPackage": "com.lqr.wechat",
+    "appActivity": "com.lqr.wechat.ui.activity.SplashActivity",
+    "unicodeKeyboard": true,
+    "resetKeyboard": true,
+    "autoLaunch": false
+  },
+  "server": "http://localhost:4725/wd/hub"
+}

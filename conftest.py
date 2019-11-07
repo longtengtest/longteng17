@@ -6,7 +6,6 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 from utils.notify import Email
-
 load_dotenv()  # 将项目下的.env文件中变量添加到环境变量中
 
 

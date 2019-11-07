@@ -1,4 +1,5 @@
 [toc]
+
 # API测试框架
 基于Pytest
 
@@ -32,13 +33,11 @@ pip freeze > requirments.txt
 ### 分层结构
 分层设计模式: 每一层为上层提供服务
 ```
-用例  test_cases/  集中管理
+用例层(测试用例)
   |
-Fixtures层 conftest.py 
+辅助Fixtures层(全局的Fixture方法)
   |
-[业务层]
-  |
-辅助方法层(数据库封装, 发送邮件等等)  utils/common/public
+实用方法层(数据库操作, 数据文件操作，发送邮件方法等等)
 ```
 
 ### 静态目录
@@ -58,7 +57,7 @@ longteng17/
   - test_cases/: 用例目录
     - pytest.ini:  pytest配置
     - api_test/:  接口用例目录
-      - conftest.py:  集中管理fixtures方法
+      - conftest.py:  集中管理Fixtures方法
     - web_test/:  web用例目录
     - app_test/:  app用例目录
   - utils/: 辅助方法
@@ -66,6 +65,8 @@ longteng17/
     - db.py: 封装数据库操作方法
     - api.py: 封装api请求方法
     - notify.py: 封装发送邮件等通知方法
+  - conftest.py: 用来放置通用的Fixtures和Hooks方法
+  - pytest.ini: Pytest运行配置
 ```
 
 ## 数据文件的选择
@@ -81,7 +82,7 @@ longteng17/
 - 配置型 
  - .ini/.properties/.conf: 只能存储1-2层数据, 适合配置文件
  
- ## 标记规划
+## 标记规划
  
 标记: mark, 也称作标签, 用来跨目录分类用例方便灵活的选择执行。
 
@@ -174,9 +175,7 @@ import smtplib
 content = '''Hi, all
 附件中是测试报告, 如有问题请指出
 '''
-content2 = '''<h2>测试报告</h2>
-<p>附件中是测试报告, 如有问题请指出<p>
-'''
+content2 = '<h2>测试报告</h2><p>以下为测试报告内容<p>'
 # msg = MIMEText(content, 'plain', 'utf-8')
 msg = MIMEText(content2, 'html', 'utf-8')
 
@@ -296,7 +295,18 @@ def db():
 def api():
     api = Api()
     return api
-
 ```
 
+
 ## 用例层
+
+# APP测试框架
+### 结构
+```
+用例层(测试用例)
+  |
+Fixtures层(业务流程)
+  |
+PageObjects
+```
+
