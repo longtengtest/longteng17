@@ -2,6 +2,7 @@ import pytest
 import pytest_check as ck
 
 
+@pytest.mark.nondestructive
 @pytest.mark.p1
 @pytest.mark.api
 def test_add_fuel_card_normal(api, db, case_data):

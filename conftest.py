@@ -11,11 +11,11 @@ from utils.notify import Email
 load_dotenv()  # 将项目下的.env文件中变量添加到环境变量中
 
 
-def pytest_configure(config):
-    """更改生成报告的路径"""
-    htmlpath = config.getoption('htmlpath')
-    now = datetime.now().strftime('%Y%m%d_%H%M%S')
-    config.option.htmlpath = os.path.join(config.rootdir, 'reports', htmlpath.format(now))
+#def pytest_configure(config):
+    #"""更改生成报告的路径"""
+    #htmlpath = config.getoption('htmlpath')
+    #now = datetime.now().strftime('%Y%m%d_%H%M%S')
+    #config.option.htmlpath = os.path.join(config.rootdir, 'reports', htmlpath.format(now))
 
 
 def pytest_addoption(parser):
