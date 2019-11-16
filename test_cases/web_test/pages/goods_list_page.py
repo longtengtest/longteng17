@@ -1,0 +1,2 @@
+class GoodsListPage(object):
+    pass
