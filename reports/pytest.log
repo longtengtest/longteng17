@@ -1,0 +1,5 @@
+2019-11-16 16:41:42 [DEBUG] test_demo1.py[test_logging:67] 调试日志
+2019-11-16 16:41:42 [INFO] test_demo1.py[test_logging:68] 点击登录
+2019-11-16 16:41:42 [WARNING] test_demo1.py[test_logging:69] 警告，数据文件缺失！
+2019-11-16 16:41:42 [ERROR] test_demo1.py[test_logging:70] 出错了
+2019-11-16 16:41:42 [CRITICAL] test_demo1.py[test_logging:71] 严重出错
