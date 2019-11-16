@@ -62,7 +62,7 @@ def test_add_goods(add_goods_page):
     add_goods_page.input_price('3999')
     add_goods_page.click_submit_btn()
 
-
+@pytest.mark.p0
 def test_logging():
     logging.debug('调试日志')
     logging.info('点击登录')
