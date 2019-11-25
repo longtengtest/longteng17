@@ -1,12 +1,12 @@
 import pytest
-from tests.webtest.ecshop.pages.login_page import LoginPage
+from test_cases.web_test.ecshop.pages.login_page import LoginPage
 from selenium import webdriver
 
 
 @pytest.fixture
 def chrome_options(chrome_options):
     # chrome_options.add_argument('--start-maximized')
-    chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--headless')
     return chrome_options
 
 

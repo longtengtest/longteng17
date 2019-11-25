@@ -4,7 +4,8 @@ import logging
 
 
 @pytest.mark.p1
-@pytest.mark.api
+@pytest.mark.apitest
+@pytest.mark.nondestructive
 def test_add_fuel_card_normal(api, db, case_data):
     """正常添加加油卡"""
     logging.info('正常添加用例')

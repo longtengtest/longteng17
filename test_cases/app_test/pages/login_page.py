@@ -1,5 +1,5 @@
 from appium.webdriver.common.mobileby import MobileBy as By
-from tests.apptest.pages.base_page import BasePage
+from test_cases.app_test.pages.base_page import BasePage
 
 
 class LoginPage(BasePage):

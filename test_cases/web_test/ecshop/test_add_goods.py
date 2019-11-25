@@ -1,6 +1,6 @@
 import pytest
-from tests.webtest.ecshop.pages.add_goods_page import AddGoodsPage
-from tests.webtest.ecshop.pages.menu_page import MenuPage
+from test_cases.web_test.ecshop.pages.add_goods_page import AddGoodsPage
+from test_cases.web_test.ecshop.pages.menu_page import MenuPage
 
 
 @pytest.mark.webtest

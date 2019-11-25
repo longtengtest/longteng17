@@ -3,4 +3,4 @@ valid_data_source_id: &valid_id bHRz
 
 test_add_fuel_card_normal:
   data_source_id: *valid_id
-  card_number: hzc_00001
+  card_number: hzc_00002

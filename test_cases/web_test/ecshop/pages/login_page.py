@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from tests.webtest.ecshop.pages.base_page import BasePage
+from test_cases.web_test.ecshop.pages.base_page import BasePage
 
 
 class LoginPage(BasePage):

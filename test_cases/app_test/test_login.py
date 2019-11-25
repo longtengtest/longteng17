@@ -1,15 +1,15 @@
-from tests.apptest.pages.launch_page import LaunchPage
-from tests.apptest.pages.login_page import LoginPage
-from tests.apptest.pages.chatout_list_page import ChatoutListPage
-from tests.apptest.pages.contacts_page import ContactsPage
-from tests.apptest.pages.person_detail_page import PersonDetailPage
-from tests.apptest.pages.chat_page import ChatPage
+import pytest
+from test_cases.app_test.pages.contacts_page import ContactsPage
+from test_cases.app_test.pages.person_detail_page import PersonDetailPage
+from test_cases.app_test.pages.chat_page import ChatPage
 
 
+@pytest.mark.nondestructive
 def test_login(login, driver):
     pass
 
 
+@pytest.mark.nondestructive
 def test_chat_with_yy(login, driver):
     login.swipe_left()
 
