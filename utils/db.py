@@ -7,12 +7,18 @@ import re
 import pymysql
 import logging
 
+PATTEN = r'(?P<db_type>\w+?)://(?P<user>\w+?):(?P<password>\w+?)@(?P<host>\w+?):(?P<port>\d+?)/(?P<db>\w+)'
+
 
 def parse_db_uri(db_uri):
     """从db_uri中解析出数据host,port,db,user,password等信息，返回字典格式的数据库配置"""
-    try:
-        db_type, user, password, host, port, db = re.split(r'://|:|@|/', db_uri)
-    except ValueError:
+    db_type = user = password = host = port = db = None
+    r = re.match(PATTEN, db_uri)
+    if r:
+        db_type, user, password, host, port, db = [r.group(item)
+                                                   for item in ['db_type', 'user', 'password', 'host', 'port', 'db']]
+
+    if not all([db_type, user, password, host, port, db]):
         raise ValueError(f'db_uri: {db_uri} - 格式不正确，应为完整的 mysql://root:password@localhost:3306/test 形式')
     if 'mysql' not in db_type:
         raise TypeError('暂时只支持mysql数据库')
